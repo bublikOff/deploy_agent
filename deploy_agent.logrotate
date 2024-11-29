@@ -1,0 +1,10 @@
+/var/log/deplay_agent*.log {
+    daily                  # Rotate logs daily
+    rotate 7               # Keep the last 7 log files
+    compress               # Compress old log files
+    delaycompress          # Delay compression until the next rotation
+    missingok              # Skip if log files are missing
+    notifempty             # Don't rotate empty logs
+    copytruncate           # Truncate logs in place
+    create 0640 root root  # Set permissions for new logs
+}

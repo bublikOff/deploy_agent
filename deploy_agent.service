@@ -1,0 +1,23 @@
+[Unit]
+Description=Deploy agent
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/deploy_agent/deploy_agent
+WorkingDirectory=/opt/deploy_agent
+User=root
+Group=root
+Restart=on-failure
+RestartSec=5s
+Environment="BOT_TOKEN=123456789:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+Environment="BOT_CHAT_ID=-1234567890"
+Environment="https://xxxxxxxxxxxxxx@git.domain.lan/user/repo1:main"
+Environment="https://xxxxxxxxxxxxxx@git.domain.lan/user/repo2:main"
+
+# Redirect console output to log files
+StandardOutput=append:/var/log/deploy_agent.log
+StandardError=append:/var/log/deploy_agent.log
+
+[Install]
+WantedBy=multi-user.target
