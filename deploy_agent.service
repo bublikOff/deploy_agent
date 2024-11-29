@@ -12,8 +12,8 @@ Restart=on-failure
 RestartSec=5s
 Environment="BOT_TOKEN=123456789:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 Environment="BOT_CHAT_ID=-1234567890"
-Environment="https://xxxxxxxxxxxxxx@git.domain.lan/user/repo1:main"
-Environment="https://xxxxxxxxxxxxxx@git.domain.lan/user/repo2:main"
+Environment="GIT_REPO1=https://xxxxxxxxxxxxxx@git.domain.lan/user/repo1:main"
+Environment="GIT_REPO2=https://xxxxxxxxxxxxxx@git.domain.lan/user/repo2:main"
 
 # Redirect console output to log files
 StandardOutput=append:/var/log/deploy_agent.log
